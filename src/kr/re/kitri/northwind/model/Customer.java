@@ -30,7 +30,6 @@ public class Customer {
     public String getCustomerid() {
         return customerid;
     }
-
     public void setCustomerid(String customerid) {
         this.customerid = customerid;
     }
@@ -38,7 +37,6 @@ public class Customer {
     public String getCompanyname() {
         return companyname;
     }
-
     public void setCompanyname(String companyname) {
         this.companyname = companyname;
     }
@@ -46,7 +44,6 @@ public class Customer {
     public String getContactname() {
         return contactname;
     }
-
     public void setContactname(String contactname) {
         this.contactname = contactname;
     }
@@ -54,7 +51,6 @@ public class Customer {
     public String getAddress() {
         return address;
     }
-
     public void setAddress(String address) {
         this.address = address;
     }
@@ -62,7 +58,6 @@ public class Customer {
     public String getCity() {
         return city;
     }
-
     public void setCity(String city) {
         this.city = city;
     }
@@ -70,7 +65,6 @@ public class Customer {
     public String getPhone() {
         return phone;
     }
-
     public void setPhone(String phone) {
         this.phone = phone;
     }

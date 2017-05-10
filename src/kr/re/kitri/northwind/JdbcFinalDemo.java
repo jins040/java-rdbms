@@ -2,6 +2,7 @@ package kr.re.kitri.northwind;
 
 import kr.re.kitri.northwind.model.Customer;
 import kr.re.kitri.northwind.service.JdbcService;
+import kr.re.kitri.northwind.util.PostgresConstants;
 
 import java.util.List;
 
@@ -10,23 +11,25 @@ import java.util.List;
  */
 public class JdbcFinalDemo {
 
-    public static final String DRIVER_POSTGRES = "org.postgresql.Driver";
-    public static final String DB_URL = "jdbc:postgresql://localhost:5432/northwind";
-    public static final String USERNAME = "postgres";
-    public static final String PASSWORD = "0409";
-
     public static void main(String[] args) {
 
-        loadDriver(DRIVER_POSTGRES);
+        // 1. 드라이버 로딩
+        loadDriver(PostgresConstants.DRIVER_POSTGRES);
 
+        // 2. 쿼리문을 통해 List에 db데이터 담기
         JdbcService service = new JdbcService();
-        List<Customer> list = service.makeList(DB_URL, USERNAME, PASSWORD);
+        List<Customer> list = service.makeList();
 
-        for (Customer e : list) {
-            System.out.println(e);
+        // 3. 결과 출력
+        if (list.size() > 0) {
+            for (Customer e : list) {
+                System.out.println(e);
+            }
+
+            System.out.printf("총 row 갯수 : %d개", list.size());
+        } else {
+            System.out.println("데이터가 없습니다.");
         }
-
-        System.out.printf("총 row 갯수 : %d개", list.size());
 
     } //main
 
@@ -39,5 +42,5 @@ public class JdbcFinalDemo {
             e.printStackTrace();
         }
 
-    }
+    } //loadDriver
 }
