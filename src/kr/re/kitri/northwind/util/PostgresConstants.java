@@ -10,4 +10,19 @@ public interface PostgresConstants {
     String USERNAME = "postgres";
     String PASSWORD = "0409";
     // default로 public static final
+
+    String query =
+            "select customerid, " +
+                    "       companyname, " +
+                    "       contactname, " +
+                    "       address, " +
+                    "       city, " +
+                    "       phone " +
+                    "from   customers " +
+                    "order  by contactname";
+
+    String joinQuery =
+            "select a.contactname, a.city, a.country, b.orderdate, b.shipcountry " +
+                    "from customers a, orders b " +
+                    "where a.customerid = b.customerid";
 }

@@ -1,5 +1,7 @@
 package kr.re.kitri.northwind.model;
 
+import java.sql.Date;
+
 /**
  * Created by danawacomputer on 2017-05-10.
  */
@@ -14,7 +16,7 @@ public class Customer {
     private String phone;
 
     // 생성자
-    public Customer() {
+    public Customer(String string, String rsString, String s, Date date, String string1) {
     }
 
     public Customer(String customerid, String companyname, String contactname, String address, String city, String phone) {
